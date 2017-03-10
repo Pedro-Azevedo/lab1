@@ -20,20 +20,11 @@ int main(void)
             printf("Error: Please insert a lowercase letter in the range from 'a' to 'h'\n");
         else
         {
-            if(col=='a' || col=='c' || col=='e'  || col=='g')
-            {
-                if(row==1 || row==3 || row==5 || row==7)
-                    printf("The chosen square of the chessboard is black\n");
-                else
-                    printf("The chosen square of the chessboard is white\n");
-            }
+            col=(int)(col-'a'+1);
+            if((col%2==0 && row%2==0)||(col%2!=0 && row%2!=0))
+                printf("The chosen square of the chessboard is black\n");
             else
-            {
-                if(row==2 || row==4 || row==6 || row==8)
-                    printf("The chosen square of the chessboard is black\n");
-                else
-                    printf("The chosen square of the chessboard is white\n");
-            }
+                printf("The chosen square of the chessboard is white\n");
         }
     }
 
